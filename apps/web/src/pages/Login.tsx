@@ -2,7 +2,15 @@ import { LoginScreen, useAuth } from '@tw-did/react-library';
 import { useNavigate } from '@tanstack/react-router';
 
 export function Login() {
-  const { user} = useAuth();
+  // const { user} = useAuth();
+  
+  const user = {
+    nationalId: 'A123456789',
+    ethereumAccount: '0x1234567890abcdef',
+    semaphoreCommitment: '',
+    id: '',
+    token: ''
+  }
 
   const handleLogin = async () => {
     /* TODO: handleFidoLogin */

@@ -1,9 +1,26 @@
 import { MessageAction } from '@tw-did/core';
-import { CredentialScreen, useCredentials } from '@tw-did/react-library';
+import { CredentialScreen, useCredentials, CredentialType } from '@tw-did/react-library';
 
 export function CredentialSelection() {
-  const { credentials, sendCredential } = useCredentials();
-
+  const { sendCredential } = useCredentials();
+  
+  const credentials = [
+    {
+      type: CredentialType.ETHEREUM,
+      fields: [
+        { key: 'national-id', value: 'A123456789' },
+        { key: 'ethereum-account-address', value: '0x1234567890abcdef' },
+      ],
+    },
+    {
+      type: CredentialType.SEMAPHORE,
+      fields: [
+        { key: 'national-id', value: 'A123456789' },
+        { key: 'ethereum-account-address', value: '0x1234567890abcdef' },
+      ],
+      description: 'You are in Taiwan DID sempahore group',
+    },
+  ]
   // if (isConnected)
     return (
       <div>
